@@ -5,7 +5,7 @@ Write a blog about objects and its internal representation in Javascript:
 	*Objects are different than primitive datatypes (i.e. number, string, boolean, etc.). Primitive data types contain one value but Objects can hold many values in form of Key: value pair. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
 
 
-codekata practice:sarted today onwards...
+codekata practice:sarted today onwards... 10-12-2023
 
 
 Read about IP address, port, HTTP methods, MAC address:	
