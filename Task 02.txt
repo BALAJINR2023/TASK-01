@@ -43,4 +43,5 @@ The window object is global and represents the entire browser window, while the 
 The window object deals with browser-related functionalities and global variables, while the document object is focused on DOM manipulation and document-specific interactions.
 --Hierarchy:
 The document object is nested within the window object. In other words, the window object contains the document object.
-
+ 
+<<<<codekata practice:done>>>
