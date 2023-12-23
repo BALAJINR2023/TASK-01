@@ -1,35 +1,100 @@
 Write a blog on Difference between HTTP1.1 vs HTTP2:
-* 1997-HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. 
+    * 1997-HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. 
+1.Connection Limitations: One of the significant drawbacks of HTTP/1.1 is its reliance on a single connection for each data request. This "one-at-a-time" approach often leads to a phenomenon known as head-of-line blocking, where the loading of one resource can be delayed by the presence of a large file ahead in the queue.
+2.Latency Issues: Another challenge with HTTP/1.1 is the high latency introduced by multiple round-trip requests. Each new resource requires a separate connection, resulting in additional latency as the browser and server exchange multiple requests and responses.
 * 2015-In contrast, HTTP/2 is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource.
-Compressing information
+{--Compressing information
 Executing multiple requests simultaneously
 Reducing protocol overhead
 Prioritizing requests
-Enabling “server push”
-
+Enabling “server push”---}
+1.Multiplexing: One of the groundbreaking features of HTTP/2 is multiplexing, which allows multiple requests and responses to be sent simultaneously over a single connection. This eliminates the head-of-line blocking issue, significantly speeding up the loading of web pages with numerous resources.
+2.Header Compression: HTTP/2 employs header compression techniques, reducing the overhead associated with sending redundant information in each request. This optimization leads to more efficient use of bandwidth and faster page loading times.
+3.Server Push: HTTP/2 introduces server push, a mechanism that enables servers to proactively send resources to the client before they are explicitly requested. This feature optimizes the loading of pages by anticipating the client's needs and reducing the number of round-trip requests.
+4.Binary Protocol: Unlike the plain text nature of HTTP/1.1, HTTP/2 uses a binary protocol for data transmission. This binary framing facilitates more efficient parsing and reduces errors, further contributing to improved performance.
 *Multiplexing: HTTP/1.1 uses a series of ordered, blocking connections. In contrast, HTTP/2's multiplexing feature allows multiple requests and responses to be sent concurrently on a single connection, reducing latency and speeding up page loading.
 
 Write a blog about objects and its internal representation in Javascript:
-*Objects are different than primitive datatypes (i.e. number, string, boolean, etc.). Primitive data types contain one value but Objects can hold many values in form of Key: value pair. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
-
+    [---objects in javascript - Objects are different than primitive datatypes (i.e. number, string, boolean, etc.). Primitive data types contain one value but Objects can hold many values in form of Key: value pair. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.---]
+<--Internal Representation of Objects-->
+// Example of a simple JavaScript object
+let car = {
+  make: 'Toyota',
+  model: 'Camry',
+  year: 2022,
+  color: 'Blue'
+};
 
 codekata practice:sarted today onwards... 10-12-2023
 
 
 Read about IP address, port, HTTP methods, MAC address:	
-*An Internet Protocol (IP) address is a unique numerical identifier for every device or network that connects to the internet. Typically assigned by an internet service provider (ISP), an IP address is an online device address used for communicating across the internet.
-*A port is a virtual point where network connections start and end. Ports are software-based and managed by a computer's operating system. Each port is associated with a specific process or service. Ports allow computers to easily differentiate between different kinds of traffic: emails go to a different port than webpages, for instance, even though both reach a computer over the same Internet connection.
-*HTTP Methods
-GET
-POST
-PUT
-HEAD
-DELETE
-PATCH
-OPTIONS
-CONNECT
-TRACE
-*A MAC address, or media access control address, is a unique 12-digit hexadecimal number that identifies a device on a network. MAC addresses are often found on a device's network interface card (NIC).
+    *An Internet Protocol (IP) address is a unique numerical identifier for every device or network that connects to the internet. Typically assigned by an internet service provider (ISP), an IP address is an online device address used for communicating across the internet.
+    *A port is a virtual point where network connections start and end. Ports are software-based and managed by a computer's operating system. Each port is associated with a specific process or service. Ports allow computers to easily differentiate between different kinds of traffic: emails go to a different port than webpages, for instance, even though both reach a computer over the same Internet connection.
+    *HTTP Methods
+GET:
+*Used to request data from a specified resource.
+*Parameters are sent in the URL.
+
+Example:
+GET /example/resource?id=123 HTTP/1.1
+
+POST:
+*Used to submit data to be processed to a specified resource.
+*Parameters are sent in the request body.
+
+Example:
+POST /example/resource HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+id=123&name=John
+
+PUT:
+*Used to update a resource or create a new resource if it doesn't exist.
+*The entire representation of the resource is sent in the request body.
+
+Example:
+PUT /example/resource/123 HTTP/1.1
+Content-Type: application/json
+{
+  "id": 123,
+  "name": "Updated Name"
+}
+
+DELETE:
+*Used to request the removal of a resource.
+
+Example:
+DELETE /example/resource/123 HTTP/1.1
+
+PATCH:
+*Used to apply partial modifications to a resource.
+
+Example:
+PATCH /example/resource/123 HTTP/1.1
+Content-Type: application/json
+{
+  "name": "New Name"
+}
+
+HEAD:
+*Similar to GET but used to retrieve only the headers of the response, not the actual data.
+
+Example:
+HEAD /example/resource?id=123 HTTP/1.1
+
+OPTIONS:
+*Used to describe the communication options for the target resource.
+
+Example:
+OPTIONS /example/resource HTTP/1.1
+
+TRACE:
+*Used to perform a message loop-back test along the path to the target resource.
+
+Example:
+TRACE /example/resource HTTP/1.1
+
+    *A MAC address, or media access control address, is a unique 12-digit hexadecimal number that identifies a device on a network. MAC addresses are often found on a device's network interface card (NIC).
 
 
 https://github.com/reach2arunprakash/javascript-101/tree/master/ppt
